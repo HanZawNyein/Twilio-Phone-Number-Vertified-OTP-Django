@@ -1,0 +1,13 @@
+{% extends 'core/base/base.html' %}
+{% block title %}HOME{% endblock title %}
+
+{% block content %}
+    <h1>HOME</h1>
+    <hr/>
+    <h1>Django and Twilio Verify Demo</h1>
+    <p>Hello {{ request.user.username }}, you are a verified user!</p>
+    <form method="POST" action="/logout/">
+        {% csrf_token %}
+        <input type="submit" value="Log out">
+    </form>
+{% endblock content %}
